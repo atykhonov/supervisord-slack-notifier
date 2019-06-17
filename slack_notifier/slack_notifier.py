@@ -149,7 +149,6 @@ class SlackNotifier:
         self.slackClient.chat_post_message(
             self.channel,
             '',
-            username='Supervisord',
             icon_emoji=':doge:',
             attachments=json.dumps(attachments)
             )
