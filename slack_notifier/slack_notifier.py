@@ -27,6 +27,19 @@
 #         -c=channel
 # events=PROCESS_STATE
 
+import os
+import sys
+import socket
+import json
+import datetime
+
+from pprint import pprint
+from pyslack import SlackClient
+from supervisor import childutils
+
+from slack_notifier import config
+
+
 doc = """\
 slack_notifier.py [-p processname] [-a] [-c channel] -t token
 
@@ -57,18 +70,6 @@ A sample invocation:
 slack_notifier.py -p=program1 -p=group1:program2 -t=dckjhgvfuhvdf -c='#general'
 
 """
-
-import os
-import sys
-import socket
-import json
-import datetime
-
-from pprint import pprint
-from pyslack import SlackClient
-from supervisor import childutils
-
-from slack_notifier import config
 
 
 def usage():
