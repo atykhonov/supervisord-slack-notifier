@@ -58,7 +58,6 @@ slack_notifier.py -p=program1 -p=group1:program2 -t=dckjhgvfuhvdf -c='#general'
 
 """
 
-import config
 import os
 import sys
 import socket
@@ -68,6 +67,8 @@ import datetime
 from pprint import pprint
 from pyslack import SlackClient
 from supervisor import childutils
+
+from slack_notifier import config
 
 
 def usage():
